@@ -1,0 +1,206 @@
+body {
+  font-family: 'DM Mono';font-size: 12px;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, auto); /* Adjust the number of columns as needed */
+  grid-template-rows:auto;
+  gap: 18px;
+  max-width: 1800px;
+  margin: auto;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: none;
+  color: #000000;
+  padding: 0px;
+  cursor: pointer;
+  overflow:scroll;
+  justify-self:stretch;
+  text-align:justify;
+  height:300px;
+  grid-column: span 2;
+  
+  
+}
+
+.default-text {
+  font-size: 22px;
+  display: block;
+  position:initial;
+}
+
+
+.default-text.right {
+  font-size: 22px;
+  display: block;
+  position:initial;
+  text-align:right;
+}
+
+.hover-text {
+  font-size: 8px;
+  display: none;
+  overflow:hidden;
+  justify-self:auto;
+  text-align:inherit;
+  
+}
+
+.grid-item:hover .default-text {
+  display: none;
+  
+}
+
+.grid-item:hover .hover-text {
+  display: block;
+  justify-self: stretch;
+  
+}
+
+.default-text img {
+  display: block;
+  position:relative;
+  width:fit-content;
+  height: 100px;
+  left: 50px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.grid-item.four {
+  margin: 1px solid black;
+  background-color: none;
+  color: #000000;
+  padding: 0px;
+  cursor: pointer;
+  overflow: scroll;
+  justify-self:stretch;
+  text-align:justify;
+  height: 300px;
+  grid-column: span 4; /* This stretches the div across two columns */
+  /* transform: rotate(-2deg); */
+}
+
+#castle {
+  display: block;
+  position:relative;
+  width:fit-content;
+  height: 300px;
+  left: 0px;
+}
+
+#skeleton {
+  display: block;
+  position:relative;
+  width:1200px;
+  height:auto;
+  left: -300px;
+top: -80px;
+}
+
+#face {
+  display: block;
+  position:relative;
+width: 250px;
+height: auto;
+  left: 0px;
+}
+
+#cact
+{
+  display: block;
+  position:relative;
+  height:50%;
+left: -30px;
+  /* transform: skew(15deg) */
+}
+
+#cacttwo
+{
+  display: block;
+  position:relative;
+  height:50%;
+left: -30px;
+top: -550px;
+  /* transform: skew(15deg) */
+}
+
+#moon
+{
+  display: block;
+  position:relative;
+  /* width:100%; */
+height: 300px;
+left: -60px;
+  /* transform: skew(15deg) */
+}
+#moontwo
+{
+  display: block;
+  position:relative;
+  /* width:100%; */
+height: 600px;
+left: -1px;
+  /* transform: skew(15deg) */
+}
+
+#bat
+{
+  display: block;
+  position:relative;
+  width: 350px;
+  height: auto;
+top: 40px;
+left: -30px;
+  transform: rotate(90deg)
+}
+
+#skeletonone
+{
+  display: block;
+  position:relative;
+  width: auto;
+  height: 400px;
+  left: -30px;
+
+}
+
+#metal
+{
+  display: block;
+  position:relative;
+  width: auto;
+  height: 400px;
+  left: 80px;
+
+}
+
+#metaltwo
+{
+  display: block;
+  position:relative;
+  width: auto;
+  height: 400px;
+  left: 80px;
+  top: -100px;
+
+}
+
+#cactthree
+{
+  display: block;
+  position:relative;
+  width: auto;
+  height: 300px;
+  left: 80px;
+  top: -10px;
+
+}
