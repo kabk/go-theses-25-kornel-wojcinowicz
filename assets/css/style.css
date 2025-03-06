@@ -1,206 +1,405 @@
+
+@font-face {
+  font-family: 'Bull5';
+  /* If your CSS is in the same folder as index.html, try: */
+  src: url('../fonts/min/Bull5.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+.chapter-content{
+  text-align:left;
+  color: #151515;
+  margin-right: 20px; 
+  /* padding-bottom: 100px; */
+}
+.sidenote {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 0px; /* Adjust as needed */
+}
+
+.chapter-sidenote p{
+  display:flex;
+  flex-direction: column;
+  flex: 1;
+  font-family: "Bull5", mono;
+  padding-top: 0px;
+  font-size: 0.8rem;
+  line-height: 17px;
+}
+
+sup[data-note] {
+  font-family: "Bull5", mono;
+  color: rgb(0, 0, 0);
+size: 0.4rem;
+}
+
+.chapter-sidenote a {
+  white-space: normal;
+  word-wrap: break-word; /* For older browsers */
+  overflow-wrap: break-word;
+}
+
+.chapter {
+  position: relative; 
+  margin-bottom: 2rem;
+}
+
+.chapter-sidenote {
+  padding-top: 5px;
+  font-size: 0.8rem;
+  color: #555;
+  width: 550px;
+  position: absolute; 
+  right: 0;        
+  
+}
+
+
+
 body {
-  font-family: 'DM Mono';font-size: 12px;
+  background-color: #ffffff;
+  font-family: "Bull5", mono;
+  font-style: normal, italic;
+  font-weight: 400;
+}
+
+h1 {
+  font-family: "Bull5", mono;
+  font-weight: 500;
+  font-size: 2rem;
+  font-style: normal;
+  margin-bottom: -40px;
+  margin-top: 50px;
+  color: #151515;
+  margin-left: 50px;
+}
+
+.subhead {
+  font-family: "logic-monospace", mono; /* or whichever font you prefer */
+  font-size: 1.5rem;           /* adjust to desired size */
+  font-weight: 500;          /* semi-bold style */
+  font-style: italic;        /* or normal, depending on your taste */
+  color: #151515;            /* text color */
+  margin-left: 80px;         /* if you want it indented */
+  margin-bottom: 50px;       /* spacing below the heading */
+}
+
+h2 {
+  font-family: "logic-monospace", mono;
+  font-weight: 500;
+  font-size: 1.5rem;
+  font-style: normal;
+  margin-bottom: 10px;
+  margin-top: 50px;
+  color: #151515;
+  margin-left: 50px;
+}
+/* Navigation */
+nav {
+  background-color: #ffffff;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.open-on-mobile{
+  display: none;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
   margin: 0;
   padding: 0;
-  background-color: #f2f2f2;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(12, auto); /* Adjust the number of columns as needed */
-  grid-template-rows:auto;
-  gap: 18px;
-  max-width: 1800px;
-  margin: auto;
-  padding: 10px;
+nav ul li {
+  margin: 0 20px;
 }
 
-.grid-item {
-  background-color: none;
-  color: #000000;
-  padding: 0px;
-  cursor: pointer;
-  overflow:scroll;
-  justify-self:stretch;
-  text-align:justify;
-  height:300px;
-  grid-column: span 2;
+nav ul li a {
+  color: #4b4b4b;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ff0000;
+  transform: translateY(-3px);
+}
+
+main p {
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  margin-left: 50px;
+  margin-right: 50px;
+  line-height:5px;
+  /* margin-bottom: 1px; */
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+
+
+article {
+  /* padding-right: 300px; */
+  position: relative;
+  width: 70%;
+  padding-top: 4rem;
+  /* margin-bottom: -1rem; */
+}
+
+  @media (max-width: 768px) {
+
+/* Make articles take full width */
+article.chapter {
+  width: 100vw;
+
+}
+
+/* Remove the reserved margin for main content */
+.chapter-content {
+  margin-right: 0 !important;
+}
+
+/* Let the side notes fall in normal flow below the main text */
+.chapter-sidenote {
+  position: static !important;
+  width: auto !important;
+  margin-top: 1rem;
+}
+
+    .article {
+      width:auto;
+    }
+
+  nav ul {
+    display:none;
+    flex-direction: column;
+  }
+
+  span.is-closed{
+    display:block;
+  }
+
+  span.is-opened{
+    display:none;
+  }
+
+
+  button.open-on-mobile.is-opened span.is-closed{
+    display:none;
+  }
+
+  button.open-on-mobile.is-opened span.is-opened{
+    display:block;
+  }
+
+  button.open-on-mobile.is-opened + ul{
+   display:flex; 
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    margin-left: 10px;
+    display: block;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+
+  nav {
+    background-color: transparent;
+  }
+
+  .open-on-mobile{
+    margin-left: 10px;
+    display: block;
+  }
+
+  .chapter-grid {
+    grid-template-columns: 1fr;
+  }
+  .chapter-sidenote {
+    margin-top: 1rem;
+    max-width: 100%;}
+
+  }
+
+
+
+
+
+
+/* ======================== */
+/* INFINITE CAROUSEL STYLES */
+/* ======================== */
+
+
+   .marquee-container1 {
+    /* width:1200px;
+    overflow: hidden;
+    position: relative;
+    margin: 2rem auto; /* Center the carousel with some vertical spacing */
+    /* padding: 0; */
+      rotate: -6deg;
+      width: 100vw;        /* or 100% if you prefer */
+      margin-top: 10px;           /* remove the auto-centering */
+      padding: 0;
+      overflow: hidden;    /* keep the overflow hidden so no scrollbars appear */
+      position: relative;
+  }
+
+  .marquee-track1 {
+    display: flex;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    width: 11590px;
+    animation: marquee1 25s linear infinite;
+  }
   
+  .marquee-track1:hover {
+    animation-play-state: paused;
+  }
   
-}
-
-.default-text {
-  font-size: 22px;
-  display: block;
-  position:initial;
-}
-
-
-.default-text.right {
-  font-size: 22px;
-  display: block;
-  position:initial;
-  text-align:right;
-}
-
-.hover-text {
-  font-size: 8px;
-  display: none;
-  overflow:hidden;
-  justify-self:auto;
-  text-align:inherit;
+  @keyframes marquee1 {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-5795px);
+    }
+  }
   
-}
-
-.grid-item:hover .default-text {
-  display: none;
+  .img-wrapper {
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
   
-}
-
-.grid-item:hover .hover-text {
-  display: block;
-  justify-self: stretch;
+  .img-wrapper img {
+    display: block;  /* remove inline gaps if any */
+    margin: 0;
+    padding: 0;
+    width: auto;     /* if they have various widths, that’s fine, 
+                        but double-check the total adds to 8437px */
+    height: 600px;
+    object-fit: cover;
+  }
   
+  .img-overlay {
+    position: absolute;
+    inset: 0; /* top:0, right:0, bottom:0, left:0 */
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .img-wrapper:hover .img-overlay {
+    opacity: 1;
+  }
+/* ======================== */
+/* INFINITE CAROUSEL STYLES */
+/* ======================== */
+
+/* Container to hide the overflow and define the visible area. 
+   800px is used to match the code that translates from 0 to -800px. */
+.marquee-container2 {
+  rotate: 3deg;
+  width: 100vw;        /* or 100% if you prefer */
+  margin-top: 10px;           /* remove the auto-centering */
+  padding: 0;
+  overflow: hidden;    /* keep the overflow hidden so no scrollbars appear */
+  position: relative;
 }
 
-.default-text img {
-  display: block;
-  position:relative;
-  width:fit-content;
-  height: 100px;
-  left: 50px;
+/* The track: 10 images, each 160px wide => 1600px total. 
+   We animate from translateX(0) to translateX(-800px) = half the track. */
+.marquee-track2 {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 1800px;
+  animation: marquee2 10s linear infinite;
 }
 
-::-webkit-scrollbar {
-  display: none;
+/* Pause the marquee if hovered. */
+.marquee-track2:hover {
+  animation-play-state: paused;
 }
 
-.grid-item.four {
-  margin: 1px solid black;
-  background-color: none;
-  color: #000000;
-  padding: 0px;
-  cursor: pointer;
-  overflow: scroll;
-  justify-self:stretch;
-  text-align:justify;
-  height: 300px;
-  grid-column: span 4; /* This stretches the div across two columns */
-  /* transform: rotate(-2deg); */
+@keyframes marquee2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1800px);
+  }
 }
 
-#castle {
-  display: block;
-  position:relative;
-  width:fit-content;
-  height: 300px;
-  left: 0px;
+/* Wrapper for each image, so we can position the overlay. */
+.img-wrapper {
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
 
-#skeleton {
-  display: block;
-  position:relative;
-  width:1200px;
-  height:auto;
-  left: -300px;
-top: -80px;
-}
-
-#face {
-  display: block;
-  position:relative;
-width: 250px;
-height: auto;
-  left: 0px;
-}
-
-#cact
-{
-  display: block;
-  position:relative;
-  height:50%;
-left: -30px;
-  /* transform: skew(15deg) */
-}
-
-#cacttwo
-{
-  display: block;
-  position:relative;
-  height:50%;
-left: -30px;
-top: -550px;
-  /* transform: skew(15deg) */
-}
-
-#moon
-{
-  display: block;
-  position:relative;
-  /* width:100%; */
-height: 300px;
-left: -60px;
-  /* transform: skew(15deg) */
-}
-#moontwo
-{
-  display: block;
-  position:relative;
-  /* width:100%; */
-height: 600px;
-left: -1px;
-  /* transform: skew(15deg) */
-}
-
-#bat
-{
-  display: block;
-  position:relative;
-  width: 350px;
-  height: auto;
-top: 40px;
-left: -30px;
-  transform: rotate(90deg)
-}
-
-#skeletonone
-{
-  display: block;
-  position:relative;
+/* Style each image (160x160, round corners). */
+.img-wrapper img {
   width: auto;
-  height: 400px;
-  left: -30px;
-
+  height: 600px;
+  object-fit: cover;
+  display: block;
 }
 
-#metal
-{
-  display: block;
-  position:relative;
-  width: auto;
-  height: 400px;
-  left: 80px;
-
+/* The overlay that appears on hover. */
+.img-overlay {
+  position: absolute;
+  inset: 0; /* top:0, right:0, bottom:0, left:0 */
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
-#metaltwo
-{
-  display: block;
-  position:relative;
-  width: auto;
-  height: 400px;
-  left: 80px;
-  top: -100px;
-
+/* Fade in the overlay when hovering over the .img-wrapper. */
+.img-wrapper:hover .img-overlay {
+  opacity: 1;
 }
 
-#cactthree
-{
-  display: block;
-  position:relative;
-  width: auto;
-  height: 300px;
-  left: 80px;
-  top: -10px;
 
+a {
+  color: blue;       /* normal state */
+}
+
+a:visited {
+  color: rgb(0, 0, 0);     /* after you click it */
+}
+
+a:hover {
+  color: red;        /* when you hover over it */
+}
+
+a:active {
+  color: green;      /* when it's being clicked */
 }
