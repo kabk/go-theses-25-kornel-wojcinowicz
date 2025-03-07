@@ -29,7 +29,7 @@ html, body {
   flex: 1;
   font-family: "Bull5", mono;
   padding-top: 0px;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   line-height: 17px;
 }
 
@@ -100,6 +100,17 @@ h2 {
   color: #151515;
   margin-left: 50px;
 }
+
+h3{
+  font-family: "logic-monospace", mono;
+  font-weight: 500;
+  font-size: 1.5rem;
+  font-style: normal;
+  margin-bottom: 10px;
+  margin-top: 50px;
+  color: #151515;
+  margin-left: 60px;
+}
 /* Navigation */
 nav {
   background-color: #ffffff;
@@ -139,16 +150,27 @@ nav ul li a:hover {
   color: #ff0000;
   transform: translateY(-3px);
 }
+.bibliography p{
+  width: 140%;
+  font-family: "Bull5", mono;
+  font-weight: 500;
+  font-size: 1rem;
+  font-style: normal;
+  margin-bottom: 40px;
+  overflow-wrap:break-word;
+
+
+}
 
 main p {
   font-family:Arial, Helvetica, sans-serif;
   font-weight: 300;
   margin-left: 50px;
   margin-right: 50px;
-  line-height:5px;
+  /* line-height:5px; */
   /* margin-bottom: 1px; */
   font-size: 1rem;
-  line-height: 1.2rem;
+  line-height: 1.3rem;
 }
 
 
