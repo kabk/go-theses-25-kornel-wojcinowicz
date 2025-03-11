@@ -80,18 +80,31 @@ h1 {
   margin-left: 50px;
 }
 
+.title {
+  font-family: "Bull5", mono;
+  font-weight: 500;
+  font-size: 2rem;
+  font-style: normal;
+  margin-bottom: -40px;
+  margin-top: 50px;
+  padding-top: 10px;
+  color: #151515;
+  margin-left: 50px;
+}
+
 .subhead {
   font-family: "logic-monospace", mono; /* or whichever font you prefer */
   font-size: 1.5rem;           /* adjust to desired size */
   font-weight: 500;          /* semi-bold style */
   font-style: italic;        /* or normal, depending on your taste */
   color: #151515;            /* text color */
-  margin-left: 80px;         /* if you want it indented */
+  /* margin-lef: 80px;         */
   margin-bottom: 50px;       /* spacing below the heading */
+
 }
 
 h2 {
-  font-family: "logic-monospace", mono;
+  font-family: "Bull5", mono;
   font-weight: 500;
   font-size: 1.5rem;
   font-style: normal;
@@ -102,14 +115,14 @@ h2 {
 }
 
 h3{
-  font-family: "logic-monospace", mono;
+  font-family: "Bull5", mono;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-style: normal;
   margin-bottom: 10px;
-  margin-top: 50px;
+  margin-top: 20px;
   color: #151515;
-  margin-left: 60px;
+  margin-left: 100px;
 }
 /* Navigation */
 nav {
@@ -132,22 +145,24 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  color: #686868;
 }
 
 nav ul li {
-  margin: 0 20px;
+  margin: 0 25px;
+  color: #686868;
 }
 
 nav ul li a {
-  color: #4b4b4b;
+  color: #686868;
   text-decoration: none;
   font-weight: 500;
   font-size: 1.2rem;
-  transition: color 0.3s, transform 0.3s;
+  transition: color  0.6s, transform 0.3s;
 }
 
 nav ul li a:hover {
-  color: #ff0000;
+  color: red;
   transform: translateY(-3px);
 }
 .bibliography p{
@@ -184,6 +199,27 @@ article {
 
   @media (max-width: 768px) {
 
+    .marquee-container5 {
+        width: 100vw !important;
+    }
+    
+
+    .title {
+      margin-left: 20px;
+      font-size: 2rem;
+    }
+
+    .subhead{
+      font-size: 1.2rem;
+      margin-left: 20px;
+    }
+
+    h2{
+      margin-left: 20px;
+    }
+    h3{
+      margin-left: 72px;
+    }
 /* Make articles take full width */
 article.chapter {
   width: 100vw;
@@ -193,6 +229,7 @@ article.chapter {
 /* Remove the reserved margin for main content */
 .chapter-content {
   margin-right: 0 !important;
+  margin-bottom: 20px;
 }
 
 /* Let the side notes fall in normal flow below the main text */
@@ -243,7 +280,7 @@ article.chapter {
   }
 
   nav {
-    background-color: transparent;
+    background-color:white
   }
 
   .open-on-mobile{
@@ -257,6 +294,11 @@ article.chapter {
   .chapter-sidenote {
     margin-top: 1rem;
     max-width: 100%;}
+
+    main p {
+      margin-left: 20px;
+    margin-right: 20px;
+    }
 
   }
 
@@ -276,7 +318,7 @@ article.chapter {
     position: relative;
     margin: 2rem auto; /* Center the carousel with some vertical spacing */
     /* padding: 0; */
-      rotate: -6deg;
+      rotate: -4deg;
       width: 100vw;        /* or 100% if you prefer */
       margin-top: 10px;           /* remove the auto-centering */
       padding: 0;
@@ -302,7 +344,7 @@ article.chapter {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-5795px);
+      transform: translateX(-5799px);
     }
   }
   
@@ -325,15 +367,16 @@ article.chapter {
   .img-overlay {
     position: absolute;
     inset: 0; /* top:0, right:0, bottom:0, left:0 */
-    background: rgba(0, 0, 0, 0.5);
+    background:black;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
     opacity: 0;
     transition: opacity 0.3s;
   }
-  
+
   .img-wrapper:hover .img-overlay {
     opacity: 1;
   }
@@ -344,9 +387,10 @@ article.chapter {
 /* Container to hide the overflow and define the visible area. 
    800px is used to match the code that translates from 0 to -800px. */
 .marquee-container2 {
-  rotate: 3deg;
+  rotate: -1.5deg;
   width: 100vw;        /* or 100% if you prefer */
-  margin-top: 10px;           /* remove the auto-centering */
+  margin-top: 20px;
+  margin-bottom: -30px;           /* remove the auto-centering */
   padding: 0;
   overflow: hidden;    /* keep the overflow hidden so no scrollbars appear */
   position: relative;
@@ -415,7 +459,7 @@ a {
 }
 
 a:visited {
-  color: rgb(0, 0, 0);     /* after you click it */
+  color: blue   /* after you click it */
 }
 
 a:hover {
@@ -423,5 +467,227 @@ a:hover {
 }
 
 a:active {
-  color: green;      /* when it's being clicked */
+  color: black    /* when it's being clicked */
+}
+
+/* ======================== */
+/* INFINITE CAROUSEL STYLES */
+/* ======================== */
+
+/* Container to hide the overflow and define the visible area. 
+   800px is used to match the code that translates from 0 to -800px. */
+   .marquee-container3 {
+    rotate: 3deg;
+    width: 100vw;        /* or 100% if you prefer */
+    margin-bottom: -80px;
+    margin-top: 10px;           /* remove the auto-centering */
+    padding: 0;
+    overflow: hidden;    /* keep the overflow hidden so no scrollbars appear */
+    position: relative;
+  }
+  
+  /* The track: 10 images, each 160px wide => 1600px total. 
+     We animate from translateX(0) to translateX(-800px) = half the track. */
+  .marquee-track3 {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 12822px;
+    animation: marquee2 10s linear infinite;
+  }
+  
+  /* Pause the marquee if hovered. */
+  .marquee-track3:hover {
+    animation-play-state: paused;
+  }
+  
+  @keyframes marquee3 {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-6411px);
+    }
+  }
+  
+  /* Wrapper for each image, so we can position the overlay. */
+  .img-wrapper {
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Style each image (160x160, round corners). */
+  .img-wrapper img {
+    width: auto;
+    height: 600px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* The overlay that appears on hover. */
+  .img-overlay {
+    position: absolute;
+    inset: 0; /* top:0, right:0, bottom:0, left:0 */
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  /* Fade in the overlay when hovering over the .img-wrapper. */
+  .img-wrapper:hover .img-overlay {
+    opacity: 1;
+  }
+
+  /* ======================== */
+/* INFINITE CAROUSEL STYLES */
+/* ======================== */
+
+
+.marquee-container4 {
+  /* width:1200px;
+  overflow: hidden;
+  position: relative;
+  margin: 2rem auto; /* Center the carousel with some vertical spacing */
+  /* padding: 0; */
+    rotate: -2deg;
+    width: 100vw;        /* or 100% if you prefer */
+    margin-top: 50px;           /* remove the auto-centering */
+    padding: 0;
+    overflow: hidden;    /* keep the overflow hidden so no scrollbars appear */
+    position: relative;
+}
+
+.marquee-track4 {
+  display: flex;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  width: 11590px;
+  animation: marquee1 25s linear infinite;
+}
+
+.marquee-track4:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee4 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-5795px);
+  }
+}
+
+.img-wrapper {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.img-wrapper img {
+  display: block;  /* remove inline gaps if any */
+  margin: 0;
+  padding: 0;
+  width: auto;     /* if they have various widths, that’s fine, 
+                      but double-check the total adds to 8437px */
+  height: 600px;
+  object-fit: cover;
+}
+
+.img-overlay {
+  position: absolute;
+  inset: 0; /* top:0, right:0, bottom:0, left:0 */
+  background:black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.img-wrapper:hover .img-overlay {
+  opacity: 1;
+}
+
+  /* ======================== */
+/* INFINITE CAROUSEL STYLES */
+/* ======================== */
+
+
+.marquee-container5 {
+  /* width:1200px;
+  overflow: hidden;
+  position: relative;
+  margin: 2rem auto; /* Center the carousel with some vertical spacing */
+  /* padding: 0; */
+    rotate: 2deg;
+    width: 66vw;        /* or 100% if you prefer */
+    margin-bottom: 30px;
+    margin-top: 50px;           /* remove the auto-centering */
+    padding: 0;
+    overflow: hidden;    /* keep the overflow hidden so no scrollbars appear */
+    position: relative;
+}
+
+.marquee-track5 {
+  display: flex;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  width: 11719,46px;
+  animation: marquee1 25s linear infinite;
+}
+
+.marquee-track5:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee5 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-5859,73px);
+  }
+}
+
+.img-wrapper {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.img-wrapper img {
+  display: block;  /* remove inline gaps if any */
+  margin: 0;
+  padding: 0;
+  width: auto;     /* if they have various widths, that’s fine, 
+                      but double-check the total adds to 8437px */
+  height: 600px;
+  object-fit: cover;
+}
+
+.img-overlay {
+  position: absolute;
+  inset: 0; /* top:0, right:0, bottom:0, left:0 */
+  background:black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.img-wrapper:hover .img-overlay {
+  opacity: 1;
 }
