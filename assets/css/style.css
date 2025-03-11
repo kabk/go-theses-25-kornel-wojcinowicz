@@ -280,12 +280,27 @@ article.chapter {
   }
 
   nav {
-    background-color:white
+    margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  background:white; /* or transparent */
+  font-size: 1rem;
+  font-family: "Bull5", monospace; /* or your custom font */
+
   }
 
   .open-on-mobile{
     margin-left: 10px;
     display: block;
+    margin: 10px;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background:white; /* or transparent */
+    font-size: 1rem;
+    font-family: "Bull5", monospace; /* or your custom font */
+  
   }
 
   .chapter-grid {
@@ -331,8 +346,8 @@ article.chapter {
     gap: 0;
     margin: 0;
     padding: 0;
-    width: 11590px;
-    animation: marquee1 25s linear infinite;
+
+    animation: marquee1 5s linear infinite;
   }
   
   .marquee-track1:hover {
@@ -344,7 +359,7 @@ article.chapter {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-5799px);
+      transform: translateX(-5500px);
     }
   }
   
@@ -402,7 +417,7 @@ article.chapter {
   display: flex;
   margin: 0;
   padding: 0;
-  width: 1800px;
+  width:auto;
   animation: marquee2 10s linear infinite;
 }
 
@@ -492,8 +507,7 @@ a:active {
     display: flex;
     margin: 0;
     padding: 0;
-    width: 12822px;
-    animation: marquee2 10s linear infinite;
+    animation: marquee3 10s linear infinite;
   }
   
   /* Pause the marquee if hovered. */
@@ -567,8 +581,7 @@ a:active {
   gap: 0;
   margin: 0;
   padding: 0;
-  width: 11590px;
-  animation: marquee1 25s linear infinite;
+  animation: marquee1 10s linear infinite;
 }
 
 .marquee-track4:hover {
@@ -642,7 +655,6 @@ a:active {
   gap: 0;
   margin: 0;
   padding: 0;
-  width: 11719,46px;
   animation: marquee1 25s linear infinite;
 }
 
@@ -655,7 +667,7 @@ a:active {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-5859,73px);
+    transform: translateX(-5612px);
   }
 }
 
@@ -669,7 +681,7 @@ a:active {
   display: block;  /* remove inline gaps if any */
   margin: 0;
   padding: 0;
-  width: auto;     /* if they have various widths, that’s fine, 
+   /* if they have various widths, that’s fine, 
                       but double-check the total adds to 8437px */
   height: 600px;
   object-fit: cover;
@@ -690,4 +702,87 @@ a:active {
 
 .img-wrapper:hover .img-overlay {
   opacity: 1;
+}
+
+/* ======================== */
+/* INFINITE CAROUSEL STYLES */
+/* ======================== */
+
+
+.marquee-container6 {
+  /* width:1200px;
+  overflow: hidden;
+  position: relative;
+  margin: 2rem auto; /* Center the carousel with some vertical spacing */
+  /* padding: 0; */
+    rotate: 2deg;
+    width: 100vw;        /* or 100% if you prefer */
+    margin-bottom: 0px;
+    margin-top: 50px;           /* remove the auto-centering */
+    padding: 0;
+    overflow: hidden;    /* keep the overflow hidden so no scrollbars appear */
+    position: relative;
+}
+
+.marquee-track6 {
+  display: flex;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  animation: marquee1 25s linear infinite;
+}
+
+.marquee-track6:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee6 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-5612px);
+  }
+}
+
+.img-wrapper {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.img-wrapper img {
+  display: block;  /* remove inline gaps if any */
+  margin: 0;
+  padding: 0;
+   /* if they have various widths, that’s fine, 
+                      but double-check the total adds to 8437px */
+  height: 600px;
+  object-fit: cover;
+}
+
+.img-overlay {
+  position: absolute;
+  inset: 0; /* top:0, right:0, bottom:0, left:0 */
+  background:black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.img-wrapper:hover .img-overlay {
+  opacity: 1;
+}
+
+.marquee-track1:hover,
+.marquee-track2:hover,
+.marquee-track3:hover,
+.marquee-track4:hover,
+.marquee-track5:hover,
+.marquee-track6:hover {
+  animation-play-state: paused !important;
 }

@@ -100,3 +100,56 @@ function repositionSidenotes() {
 
 document.addEventListener("DOMContentLoaded", repositionSidenotes);
 window.addEventListener('resize', repositionSidenotes);
+
+
+
+window.addEventListener('load', () => {
+  // 1) Select all tracks with these classes
+  const allTracks = document.querySelectorAll('.marquee-track1, .marquee-track2, .marquee-track3, .marquee-track4, .marquee-track5, .marquee-track6');
+  
+allTracks.forEach((track, index) => {
+    // 1) Measure the actual width
+    const totalWidth = track.scrollWidth; 
+    // 2) Set track's width if needed
+    track.style.width = totalWidth + 'px';
+
+    // 3) Create a unique animation name for each track
+    const animationName = `marqueeLoop${index}`;
+
+    // 4) Create a unique class name so each track can get a custom duration
+    //    You can pass any speed you want, e.g. 8s, 12s, etc.
+    const speedSeconds = 15;  // <-- CHANGE THIS to whatever you want
+    const className = `dynamic-marquee-${index}`;
+
+    // 5) Build the <style> text
+    const styleText = `
+      @keyframes ${animationName} {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-${totalWidth / 2}px);
+        }
+      }
+
+      /* The main animation rule, e.g. 5s, linear, infinite */
+      .${className} {
+        animation: ${animationName} ${speedSeconds}s linear infinite;
+      }
+
+      /* Pause on hover: fully works because it's normal CSS, 
+         not overridden by inline styles. */
+      .${className}:hover {
+        animation-play-state: paused;
+      }
+    `;
+
+    // 6) Inject that into a new <style> element
+    const styleEl = document.createElement('style');
+    styleEl.innerHTML = styleText;
+    document.head.appendChild(styleEl);
+
+    // 7) Finally, add the class to the track
+    track.classList.add(className);
+  });
+});
